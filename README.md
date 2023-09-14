@@ -17,7 +17,6 @@ Clone the repository and navigate into the project directory.
 ```bash
 git clone https://github.com/tvay11/weatherHistory.git
 cd weatherHistory
-pip install -r requirements.txt
 ```
 
 ## Usage
