@@ -1,4 +1,4 @@
-# weatherHistory
+# SkyWatch
 https://github.com/tvay11/weatherHistory.git
 ## Overview
 
@@ -15,8 +15,8 @@ This project provides a tool to monitor the air quality index, temperature, and 
 Clone the repository and navigate into the project directory.
 
 ```bash
-git clone https://github.com/tvay11/weatherHistory.git
-cd weatherHistory
+git clone https://github.com/tvay11/SkyWatch.git
+cd SkyWatch
 ```
 
 ## Usage
