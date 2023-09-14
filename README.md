@@ -1,5 +1,6 @@
 # SkyWatch
-https://github.com/tvay11/weatherHistory.git
+
+
 ## Overview
 
 This project provides a tool to monitor the air quality index, temperature, and humidity in various cities. It fetches data from an external API and stores it in a SQLite database for later analysis.
