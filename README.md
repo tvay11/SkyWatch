@@ -1,31 +1,93 @@
 # SkyWatch
 
 
-## Overview
+This Python script fetches and stores air quality data from different cities around the world into an SQLite database.
 
-This project provides a tool to monitor the air quality index, temperature, and humidity in various cities. It fetches data from an external API and stores it in a SQLite database for later analysis.
+## Table of Contents
+- [Dependencies](#dependencies)
+- [Configuration](#configuration)
+- [Features](#features)
+- [Functions](#functions)
+    - [`initialize_db()`](#initialize_db)
+    - [`fetch_air_quality(city, state, country)`](#fetch_air_qualitycity-state-country)
+    - [`store_data(data)`](#store_datadata)
+    - [`print_row(rows)`](#print_rowrows)
+    - [`print_database()` and Sorting Functions](#print_database-and-sorting-functions)
+    - [`delete_all_records()`](#delete_all_records)
+- [Code Snippet](#code-snippet)
 
-## Requirements
+## Dependencies
 
-- Python 3.x
-- SQLite
-- `requests` library
+- `sqlite3`
+- `time`
+- `requests`
+- `json`
+- `datetime`
 
-## Installation
+## Configuration
 
-Clone the repository and navigate into the project directory.
+Before running the script, make sure you have a `config.json` file with the AirVisual API key:
 
-```bash
-git clone https://github.com/tvay11/SkyWatch.git
-cd SkyWatch
-```
+\```json
+{
+  "airvisual_api_key": "YOUR_API_KEY"
+}
+\```
 
-## Usage
+## Features
 
-run the main script with
-```bash
-python main.py
-```
+- Initialize SQLite database with a specific schema.
+- Fetch air quality data from an API.
+- Store the fetched data into the SQLite database.
+- Various functions for viewing the database.
+- Supports rate limiting and retries.
+
+## Functions
+
+### `initialize_db()`
+
+Initializes an SQLite database with a specific table schema for storing air quality data.
+
+### `fetch_air_quality(city, state, country)`
+
+Fetches air quality data for a specific location from the API. The function returns this data as a dictionary. It also handles various types of API errors and rate limiting.
+
+### `store_data(data)`
+
+Takes a dictionary containing air quality data and stores it in the SQLite database.
+
+### `print_row(rows)`
+
+A utility function that takes a list of database rows and pretty-prints them to the console.
+
+### `print_database()` and Sorting Functions
+
+These functions are responsible for displaying the database contents. They allow the user to view data sorted by different attributes, such as date, AQI, temperature, and humidity.
+
+- `print_database()`
+- `print_sorted_by_date()`
+- `print_sorted_by_aqi()`
+- `print_sorted_by_temp()`
+- `print_sorted_by_humidity()`
+- `print_sorted_by_state_and_city()`
+
+### `delete_all_records()`
+
+Deletes all records from the database. Use this function with caution as it will remove all stored data.
+
+## Code Snippet
+
+Here's a snippet to give you an idea of how the main program flow is structured:
+
+\```python
+if __name__ == "__main__":
+    initialize_db()
+    city_list = [
+        {'city': 'Los Angeles', 'state': 'California', 'country': 'USA'},
+        # ... more cities
+    ]
+    run_fetch(city_list)
+\```
 
 
 
