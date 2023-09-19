@@ -14,7 +14,6 @@ This Python script fetches and stores air quality data from different cities aro
     - [`print_row(rows)`](#print_rowrows)
     - [`print_database()` and Sorting Functions](#print_database-and-sorting-functions)
     - [`delete_all_records()`](#delete_all_records)
-- [Code Snippet](#code-snippet)
 
 ## Dependencies
 
@@ -75,19 +74,7 @@ These functions are responsible for displaying the database contents. They allow
 
 Deletes all records from the database. Use this function with caution as it will remove all stored data.
 
-## Code Snippet
 
-Here's a snippet to give you an idea of how the main program flow is structured:
-
-\```python
-if __name__ == "__main__":
-    initialize_db()
-    city_list = [
-        {'city': 'Los Angeles', 'state': 'California', 'country': 'USA'},
-        # ... more cities
-    ]
-    run_fetch(city_list)
-\```
 
 
 
