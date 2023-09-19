@@ -79,7 +79,7 @@ Deletes all records from the database. Use this function with caution as it will
 
 Here's a snippet to give you an idea of how the main program flow is structured:
 
-\```python
+```python
 if __name__ == "__main__":
     initialize_db()
     city_list = [
@@ -87,7 +87,7 @@ if __name__ == "__main__":
         # ... more cities
     ]
     run_fetch(city_list)
-\```
+```
 
 
 
